@@ -48,4 +48,7 @@ jobs:
           docker stop app-container || true
           docker rm app-container || true
           docker run -d --name app-container --rm -p 80:8080 l00157158/myapp01:latest
+    - name: Run Postman Tests
+      run: newman run prj/PipeLine-Prj.postman_collection.json
+
         
