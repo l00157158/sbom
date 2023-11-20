@@ -31,5 +31,6 @@ jobs:
     - name: Build and push Docker image
       run: |
         docker build -t ${{ secrets.DOCKER_USERNAME }}/myapp01:latest .
+        working-directory: ./prj
         docker push ${{ secrets.DOCKER_USERNAME }}/myapp01:latest
         
