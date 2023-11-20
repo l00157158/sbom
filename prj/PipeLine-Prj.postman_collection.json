@@ -1,0 +1,22 @@
+{
+	"info": {
+		"_postman_id": "6f5470fb-79dc-42a4-86de-433c91e2daf3",
+		"name": "PipeLine-Prj",
+		"description": "This is for the Pipeline project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PipeLine-test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				},
+				"description": "http://52.23.156.121/hello"
+			},
+			"response": []
+		}
+	]
+}
