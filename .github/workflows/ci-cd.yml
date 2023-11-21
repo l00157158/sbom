@@ -59,7 +59,29 @@ jobs:
           docker build -t ${{ secrets.DOCKER_USERNAME }}/myapp01:latest .
           docker push ${{ secrets.DOCKER_USERNAME }}/myapp01:latest
         working-directory: ./prj
+      #-------------------------------------------------------------
+      # SonarQube analysis steps
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
 
+      - name: Cache Maven packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+
+      - name: SonarQube Scan
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=l00157158_PipeLineProject
+        working-directory: ./prj
+      #-------------------------------------------------------------
   deploy_to_ec2:
     needs: docker_push
     runs-on: ubuntu-latest
