@@ -16,6 +16,10 @@
 	<properties>
 		<java.version>17</java.version>
 	</properties>
+	<properties>
+                <sonar.projectKey>l00157158</sonar.projectKey>
+                <sonar.organization>your-sonarcloud-organization-name-here</sonar.organization>
+        </properties>
 	<dependencies>
 
  		<dependency>
