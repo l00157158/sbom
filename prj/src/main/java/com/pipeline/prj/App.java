@@ -8,6 +8,6 @@ public class App {
 
     @GetMapping("/hello")
     public String sayHello() {
-        return "Hello, World!! My Name is Jimmy; This is a Pipeline demo Ver 0.1 ";
+        return "Hello, World!! My Name is Jimmy; This is a Pipeline demo Ver 0.3 ";
     }
 }
