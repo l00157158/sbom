@@ -42,6 +42,7 @@
             <version>5.7.0</version> <!-- Make sure this is the correct version -->
             <scope>test</scope>
         </dependency>
+		
  	</dependencies>
 
 	<build>
