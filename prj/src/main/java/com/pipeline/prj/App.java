@@ -18,7 +18,7 @@ public class App {
         // Format the timestamp as a string
         String timestamp = currentDateTime.format(formatter);
         
-        String message = "Hello, World!! My Name is Jimmy; This is a Pipeline demo Ver 0.2 ";
+        String message = "Hello, World!! My Name is Jimmy; This is a Pipeline demo Ver 0.3 ";
         String messageWithTimestamp = message + "Timestamp: " + timestamp;
         
         return messageWithTimestamp;
