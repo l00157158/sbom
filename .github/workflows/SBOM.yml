@@ -46,6 +46,7 @@ jobs:
       contents: write # required to upload to the Dependency submission API
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - name: Download target directory
       uses: actions/download-artifact@v2
       with:
