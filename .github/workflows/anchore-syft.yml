@@ -38,7 +38,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
     - name: Build the Docker image
       run: docker build -t ${{ secrets.DOCKER_USERNAME }}/myapp01:latest .
-      working-directory: ./prj
+      working-directory: ./prj/target
     - name: Scan the image and upload dependency results
       uses: anchore/sbom-action@bb716408e75840bbb01e839347cd213767269d4a
       with:
