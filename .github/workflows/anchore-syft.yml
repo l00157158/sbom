@@ -41,6 +41,7 @@ jobs:
            path: prj/target
           
    Anchore-Build-Scan:
+    needs: build
     permissions:
       contents: write # required to upload to the Dependency submission API
     runs-on: ubuntu-latest
